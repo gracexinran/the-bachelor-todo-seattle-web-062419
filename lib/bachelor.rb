@@ -48,9 +48,9 @@ def get_average_age_for_season(data, season)
   average = (ages.sum.to_f) / (ages.length.to_f)
   high = ((ages.sum.to_f) / (ages.length.to_f)).ceil
   if average > (high.to_f - 0.5)
-    average = average.ceil 
-  else 
+    average = average.ceil
+  else
     average = average.floor
   end
-  average 
+  average
 end
