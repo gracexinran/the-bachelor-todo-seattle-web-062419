@@ -45,5 +45,12 @@ def get_average_age_for_season(data, season)
   data[season].each do |person|
     ages << person['age'].to_i
   end
-  ((ages.sum.to_f) / (ages.length.to_f)).to_i
+  average = (ages.sum.to_f) / (ages.length.to_f)
+  high = ((ages.sum.to_f) / (ages.length.to_f)).ceil
+  if average > (high.to_f - 0.5)
+    average = average.ceil 
+  else 
+    average = average.floor
+  end
+  average 
 end
